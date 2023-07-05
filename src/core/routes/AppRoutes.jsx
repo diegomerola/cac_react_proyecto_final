@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeView from "../../pages/home/views/HomeView";
-import LoginView from "../../pages/login/views/Loginview";
+import LoginView from "../../pages/login/views/LoginView";
 import GeneralLayout from "../../layout/general/GeneralLayout";
 
 export const appRouter = createBrowserRouter([
