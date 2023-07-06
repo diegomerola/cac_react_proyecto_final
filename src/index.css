@@ -1,6 +1,6 @@
 :root {
-  --nextui-breakpoints-lg: 1600px;
-  --nextui--navbarPadding: 0px;
+  --nextui-breakpoints-lg: 1600px !important;
+  --nextui--navbarPadding: 0px !important;
 }
 
 body {
@@ -14,9 +14,9 @@ body {
   -webkit-touch-callout: none;
 }
 
-h1 {
-  font-size: 1.2rem;
-}
+/* h1 {
+  font-size: 1.2rem !important;
+} */
 
 /* Swiper */
 :root {

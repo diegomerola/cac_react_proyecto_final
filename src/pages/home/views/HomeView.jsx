@@ -24,9 +24,11 @@ const HomeView = () => {
     <div>
       {/* {console.log(dataPopularMovies)} */}
 
-      <Spacer y={1.2} />
+      <Spacer y={1.3} />
       <div>
-        <Text h1>Popular Movies</Text>
+        <Text h1 css={{ fontSize: "$lg" }}>
+          Popular Movies
+        </Text>
         <SwiperGeneric>
           {dataPopularMovies.map((movie) => (
             <SwiperSlide key={movie.id}>
@@ -37,7 +39,9 @@ const HomeView = () => {
       </div>
       <Spacer y={2.4} />
       <div>
-        <Text h1>Popular Movies</Text>
+        <Text h1 css={{ fontSize: "$lg" }}>
+          Popular Movies
+        </Text>
         <SwiperGeneric>
           {dataPopularMovies.map((movie) => (
             <SwiperSlide key={movie.id}>
