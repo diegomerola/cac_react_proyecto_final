@@ -5,7 +5,7 @@ const GeneralLayout = ({ children }) => {
     <div>
       <Container
         css={{
-          maxW: "96%",
+          maxW: "98%",
         }}
       >
         <Nav />
