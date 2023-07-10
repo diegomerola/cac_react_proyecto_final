@@ -3,12 +3,12 @@ import { Container } from "@nextui-org/react";
 const GeneralLayout = ({ children }) => {
   return (
     <div>
+      <Nav />
       <Container
         css={{
-          maxW: "98%",
+          maxW: "100%",
         }}
       >
-        <Nav />
         {children}
       </Container>
     </div>

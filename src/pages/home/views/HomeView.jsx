@@ -1,10 +1,9 @@
 import swr from "swr";
 
 import { SwiperSlide } from "swiper/react";
-import { Modal, Spacer, Text } from "@nextui-org/react";
+import { Modal, Spacer, Text, Loading } from "@nextui-org/react";
 import SwiperGeneric from "../../../components/SwiperGeneric/SwiperGeneric";
 import CardGenericMovie from "../../../components/CardGenericMovie/CardGenericMovie";
-import CardPrimary from "../../../components/Card/CardPrimary";
 
 import { getPopularMovies } from "../../../services/tmdb.service";
 
@@ -17,7 +16,20 @@ const HomeView = () => {
 
   // Condicional para mostrar loading:
   if (isLoadingPopularMovies) {
-    return <h1>Loading...</h1>;
+    return (
+      <Loading
+        type="gradient"
+        size="md"
+        css={{
+          display: "flex",
+          alignContent: "center",
+          alignItems: "center",
+          paddingTop: "$5",
+        }}
+      >
+        Loading...
+      </Loading>
+    );
   }
 
   return (
