@@ -25,7 +25,8 @@ const Nav = () => {
           "@xs": {
             w: "12%",
           },
-          marginRight: "$8",
+          /* marginRight: "$2",
+          marginLeft: "$2", */
         }}
       >
         <Logo />

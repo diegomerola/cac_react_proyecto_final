@@ -1,14 +1,14 @@
-import { Card, Text, Modal, Link, Image } from "@nextui-org/react";
+import { Card, Text, Modal } from "@nextui-org/react";
 import React, { useState } from "react";
-
-import { motion } from "framer-motion";
-import CardVideo from "../CardVideo/CardVideo";
+import CardModal from "../CardModal/CardModal";
 
 const CardGenericMovie = ({ user }) => {
+  // State CardGenericMovie
   const [isHovered, setIsHovered] = useState(false);
   const onMouseEnter = () => setIsHovered(true);
   const onMouseLeave = () => setIsHovered(false);
 
+  // State CardModal
   const [visible, setVisible] = useState(false);
   const handler = () => setVisible(true);
   const closeHandler = () => {
@@ -17,13 +17,13 @@ const CardGenericMovie = ({ user }) => {
   };
 
   return (
-    <motion.div key={user.id} initial={{ y: -100 }} animate={{ y: 0 }}>
+    <>
       {/* {console.log(user)} */}
       <Card
-        onClick={() => console.log(`${user.id}`)}
+        //onClick={() => console.log(`${user.id}`)}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        onPress={handler}
+        onClick={handler}
         isHoverable
         isPressable
         css={{
@@ -39,14 +39,14 @@ const CardGenericMovie = ({ user }) => {
         <Card.Header
           css={{
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "flex-start",
             padding: "0",
           }}
         >
           <Text
             css={{
               color: "$red700",
-              fontWeight: "$semibold",
+              fontWeight: "$bold",
               fontSize: "$sm",
               bgBlur: "10px",
               padding: "0 $1",
@@ -77,8 +77,10 @@ const CardGenericMovie = ({ user }) => {
         </Card.Body>
 
         <Card.Footer
+          isBlurred
           css={{
-            bgBlur: "10px",
+            //bgBlur: "10px",
+            bgBlur: "#0f111466",
             borderRadius: "0px",
           }}
         >
@@ -93,40 +95,11 @@ const CardGenericMovie = ({ user }) => {
           </Text>
         </Card.Footer>
       </Card>
+
       <Modal noPadding open={visible} onClose={closeHandler}>
-        <Modal.Header
-          css={{ position: "absolute", zIndex: "$1", top: 5, right: 8 }}
-        >
-          <Text color="#363449">
-            Photo by{" "}
-            <Link
-              color
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://unsplash.com/@anniespratt"
-            >
-              Annie Spratt
-            </Link>{" "}
-            on{" "}
-            <Link
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://unsplash.com/s/visual/ef7937f3-0d44-43eb-b992-28050748f999?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
-            >
-              Unsplash
-            </Link>
-          </Text>
-        </Modal.Header>
-        <Modal.Body>
-          <Image
-            showSkeleton
-            src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-            width={400}
-            height={490}
-          />
-        </Modal.Body>
+        <CardModal user={user} closeHandler={closeHandler} />
       </Modal>
-    </motion.div>
+    </>
   );
 };
 

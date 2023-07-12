@@ -15,8 +15,12 @@ body {
 }
 
 /* Swiper */
-:root {
+/* :root {
   --swiper-navigation-size: 25px;
+} */
+
+:root {
+  --swiper-navigation-size: 10px;
 }
 
 .swiper {
@@ -53,7 +57,31 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
+  top:40%;
   color: whitesmoke !important;
   font-weight: 600;
   z-index: 1;
+  color: whitesmoke;
+  box-shadow: 0 0 0 0.35rem rgba(10,10,10,.4);
+  background-color: #15171c;
+  padding: 20px;
+  border-radius: 20px;
 }
+
+ion-icon {
+  font-size: 45px !important;
+  font-weight: 100 !important;
+  color: whitesmoke !important;
+}
+
+.icon-card-modal {
+  font-weight: 100 !important;
+}
+
+.icon-card-modal :hover{
+  color: grey !important;
+  transition:  0.3s;
+  cursor: pointer;
+}
+
+
