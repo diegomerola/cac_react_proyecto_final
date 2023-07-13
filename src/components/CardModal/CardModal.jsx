@@ -64,6 +64,8 @@ const CardModal = ({ user, closeHandler }) => {
               color="grey"
               css={{
                 textAlign: "left",
+                lineHeight: "$sm",
+                paddingTop: "$2",
                 paddingLeft: "$3",
                 paddingBottom: "$0",
               }}

@@ -12,7 +12,7 @@ export const tmdb_paths = {
   movies: {
     popular: "/movie/popular",
     topRated: "/movie/top_rated",
-    upcoming: "/movie/upcoming",
+    upComing: "/movie/upcoming",
     nowPlaying: "/movie/now_playing",
     details: (id) => `/movie/${id}`,
     videos: (id) => `/movie/${id}/videos`,

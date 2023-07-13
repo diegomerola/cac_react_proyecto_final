@@ -5,27 +5,9 @@ import { Spacer, Text, Loading } from "@nextui-org/react";
 import SwiperGeneric from "../../../components/SwiperGeneric/SwiperGeneric";
 import CardGeneric from "../../../components/CardGeneric/CardGeneric";
 
-import {
-  getPopularMovies,
-  getTopRatedMovies,
-  getUpcomingMovies,
-  getNowPlayingMovies,
-  getTrendingMovies,
-  getPopularTVSeries,
-  getTopRatedTVSeries,
-  getOnTheAirTVSeries,
-  getAiringTodayTVSeries,
-  getTrendingTVSeries,
-  getTrendingAll,
-} from "../../../services/tmdb.service";
+import { getPopularTVSeries } from "../../../services/tmdb.service";
 
-const HomeView = () => {
-  const {
-    data: dataPopularMovies,
-    error: errorPopularMovies,
-    isLoading: isLoadingPopularMovies,
-  } = swr(`getPopularMovies`, () => getPopularMovies());
-
+const SeriesView = () => {
   const {
     data: dataPopularTVSeries,
     error: errorPopularTVSeries,
@@ -33,7 +15,7 @@ const HomeView = () => {
   } = swr(`getPopularTVSeries`, () => getPopularTVSeries());
 
   // Condicional para mostrar loading:
-  if (isLoadingPopularMovies || isLoadingPopularTVSeries) {
+  if (isLoadingPopularTVSeries) {
     return (
       <Loading
         type="gradient"
@@ -52,22 +34,9 @@ const HomeView = () => {
 
   return (
     <div>
-      {console.log(dataPopularMovies)}
+      {console.log(dataPopularTVSeries)}
 
       <Spacer y={1.3} />
-      <div>
-        <Text h1 css={{ fontSize: "$lg" }}>
-          Popular Movies
-        </Text>
-        <SwiperGeneric>
-          {dataPopularMovies.map((movie) => (
-            <SwiperSlide key={movie.id}>
-              <CardGeneric user={movie} />
-            </SwiperSlide>
-          ))}
-        </SwiperGeneric>
-      </div>
-      <Spacer y={2.4} />
       <div>
         <Text h1 css={{ fontSize: "$lg" }}>
           Popular Series
@@ -85,4 +54,4 @@ const HomeView = () => {
   );
 };
 
-export default HomeView;
+export default SeriesView;

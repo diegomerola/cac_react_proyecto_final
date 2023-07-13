@@ -2,7 +2,7 @@ import { Card, Text, Modal } from "@nextui-org/react";
 import React, { useState } from "react";
 import CardModal from "../CardModal/CardModal";
 
-const CardGenericMovie = ({ user }) => {
+const CardGeneric = ({ user }) => {
   // State CardGenericMovie
   const [isHovered, setIsHovered] = useState(false);
   const onMouseEnter = () => setIsHovered(true);
@@ -103,4 +103,4 @@ const CardGenericMovie = ({ user }) => {
   );
 };
 
-export default CardGenericMovie;
+export default CardGeneric;
