@@ -6,9 +6,7 @@ export const moviesAdapter = (data) => {
     title: movie.title,
     description: movie.overview,
     poster: tmdb_paths.images.poster(movie.poster_path),
-    backdrop: `${tmdb_paths.images.backdrop(
-      movie.backdrop_path
-    )}?append_to_response=images&language=en-US&include_image_language=en,null `,
+    backdrop: `${tmdb_paths.images.backdrop(movie.backdrop_path)}`,
     rating: movie.vote_average,
     releaseDate: movie.release_date,
   }));
@@ -21,9 +19,7 @@ export const tvAdapter = (data) => {
     description: tv.overview,
     poster: tmdb_paths.images.poster(tv.poster_path),
     backdrop: tv.backdrop_path
-      ? `${tmdb_paths.images.backdrop(
-          tv.backdrop_path
-        )}?append_to_response=images&language=en-US&include_image_language=en,null`
+      ? `${tmdb_paths.images.backdrop(tv.backdrop_path)}`
       : "https://via.placeholder.com/1920x1080?text=No+Image+Available",
     rating: tv.vote_average,
     releaseDate: tv.first_air_date,
