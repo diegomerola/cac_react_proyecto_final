@@ -1,4 +1,4 @@
-/* import { Navbar, Text } from "@nextui-org/react";
+import { Navbar, Text } from "@nextui-org/react";
 
 const Links = ({ routes }) => {
   return (
@@ -13,9 +13,9 @@ const Links = ({ routes }) => {
   );
 };
 
-export default Links; */
+export default Links;
 
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom";
 
 const Links = ({ routes }) => {
   return (
@@ -30,4 +30,4 @@ const Links = ({ routes }) => {
   );
 };
 
-export default Links;
+export default Links; */
