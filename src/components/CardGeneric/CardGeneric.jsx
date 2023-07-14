@@ -13,14 +13,11 @@ const CardGeneric = ({ user }) => {
   const handler = () => setVisible(true);
   const closeHandler = () => {
     setVisible(false);
-    console.log("closed");
   };
 
   return (
     <>
-      {/* {console.log(user)} */}
       <Card
-        //onClick={() => console.log(`${user.id}`)}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         onClick={handler}

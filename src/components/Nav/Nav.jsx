@@ -5,18 +5,6 @@ import Links from "./Links";
 import NavCollapseItem from "./NavCollapseItem";
 
 const Nav = () => {
-  /* const collapseItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ]; */
   return (
     <Navbar variant="sticky">
       <Navbar.Toggle showIn="xs" />

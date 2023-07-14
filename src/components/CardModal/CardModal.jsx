@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const CardModal = ({ user, closeHandler }) => {
   return (
     <Card css={{ w: "100%", h: "350px" }}>
-      {console.log(user)}
       <Card.Header
         css={{
           position: "absolute",

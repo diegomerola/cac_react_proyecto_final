@@ -56,6 +56,7 @@ const MoviesView = () => {
       <Loading
         type="gradient"
         size="md"
+        color="warning"
         css={{
           display: "flex",
           alignContent: "center",
@@ -70,8 +71,6 @@ const MoviesView = () => {
 
   return (
     <div>
-      {console.log(dataPopularMovies)}
-
       <Spacer y={1.3} />
       <div>
         <Text h1 css={{ fontSize: "$lg" }}>

@@ -8,15 +8,8 @@ import CardGeneric from "../../../components/CardGeneric/CardGeneric";
 import {
   getPopularMovies,
   getTopRatedMovies,
-  getUpcomingMovies,
-  getNowPlayingMovies,
-  getTrendingMovies,
   getPopularTVSeries,
   getTopRatedTVSeries,
-  getOnTheAirTVSeries,
-  getAiringTodayTVSeries,
-  getTrendingTVSeries,
-  getTrendingAll,
 } from "../../../services/tmdb.service";
 
 const HomeView = () => {
@@ -27,17 +20,35 @@ const HomeView = () => {
   } = swr(`getPopularMovies`, () => getPopularMovies());
 
   const {
+    data: dataTopRatedMovies,
+    error: errorTopRatedMovies,
+    isLoading: isLoadingTopRatedMovies,
+  } = swr(`getTopRatedMovies`, () => getTopRatedMovies());
+
+  const {
+    data: dataTopRatedTVSeries,
+    error: errorTopRatedTVSeries,
+    isLoading: isLoadingTopRatedTVSeries,
+  } = swr(`getTopRatedTVSeries`, () => getTopRatedTVSeries());
+
+  const {
     data: dataPopularTVSeries,
     error: errorPopularTVSeries,
     isLoading: isLoadingPopularTVSeries,
   } = swr(`getPopularTVSeries`, () => getPopularTVSeries());
 
   // Condicional para mostrar loading:
-  if (isLoadingPopularMovies || isLoadingPopularTVSeries) {
+  if (
+    isLoadingPopularMovies ||
+    isLoadingTopRatedMovies ||
+    isLoadingPopularTVSeries ||
+    isLoadingTopRatedTVSeries
+  ) {
     return (
       <Loading
         type="gradient"
         size="md"
+        color="warning"
         css={{
           display: "flex",
           alignContent: "center",
@@ -52,8 +63,6 @@ const HomeView = () => {
 
   return (
     <div>
-      {console.log(dataPopularMovies)}
-
       <Spacer y={1.3} />
       <div>
         <Text h1 css={{ fontSize: "$lg" }}>
@@ -68,12 +77,41 @@ const HomeView = () => {
         </SwiperGeneric>
       </div>
       <Spacer y={2.4} />
+
       <div>
         <Text h1 css={{ fontSize: "$lg" }}>
           Popular Series
         </Text>
         <SwiperGeneric>
           {dataPopularTVSeries.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <CardGeneric user={movie} />
+            </SwiperSlide>
+          ))}
+        </SwiperGeneric>
+      </div>
+      <Spacer y={2.4} />
+
+      <div>
+        <Text h1 css={{ fontSize: "$lg" }}>
+          Top Rated Movies
+        </Text>
+        <SwiperGeneric>
+          {dataTopRatedMovies.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <CardGeneric user={movie} />
+            </SwiperSlide>
+          ))}
+        </SwiperGeneric>
+      </div>
+      <Spacer y={2.4} />
+
+      <div>
+        <Text h1 css={{ fontSize: "$lg" }}>
+          Top Rated Series
+        </Text>
+        <SwiperGeneric>
+          {dataTopRatedTVSeries.map((movie) => (
             <SwiperSlide key={movie.id}>
               <CardGeneric user={movie} />
             </SwiperSlide>
