@@ -47,14 +47,14 @@ export const routes = [
   },
   {
     name: "Peliculas",
-    to: "/peliculas",
+    to: "peliculas",
   },
   {
     name: "Series",
-    to: "/series",
+    to: "series",
   },
   {
     name: "Login",
-    to: "/login",
+    to: "login",
   },
 ];
