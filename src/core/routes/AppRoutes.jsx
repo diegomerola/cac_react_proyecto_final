@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import GeneralLayout from "../../layout/general/GeneralLayout";
 import HomeView from "../../pages/home/views/HomeView";
 import LoginView from "../../pages/login/views/LoginView";
 import MoviesView from "../../pages/movies/views/MoviesView";
-import GeneralLayout from "../../layout/general/GeneralLayout";
 import SeriesView from "../../pages/series/views/SeriesView";
 
 export const appRouter = createBrowserRouter([
@@ -15,7 +15,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "/peliculas",
+    path: "peliculas",
     element: (
       <GeneralLayout>
         <MoviesView />
@@ -23,7 +23,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "/series",
+    path: "series",
     element: (
       <GeneralLayout>
         <SeriesView />
@@ -31,7 +31,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "/login",
+    path: "login",
     element: (
       <GeneralLayout>
         <LoginView />
@@ -46,16 +46,12 @@ export const routes = [
     to: "/",
   },
   {
-    name: "Series",
-    to: "/series",
-  },
-  {
     name: "Peliculas",
     to: "/peliculas",
   },
   {
-    name: "Mi Lista",
-    to: "/milista",
+    name: "Series",
+    to: "/series",
   },
   {
     name: "Login",

@@ -5,6 +5,7 @@ const Links = ({ routes }) => {
     <>
       {routes.map((route) => (
         <Navbar.Link href={route.to} key={route.name}>
+          {console.log(route.to)}
           {route.name}
         </Navbar.Link>
       ))}
