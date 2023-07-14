@@ -15,7 +15,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "peliculas",
+    path: "/peliculas",
     element: (
       <GeneralLayout>
         <MoviesView />
@@ -23,7 +23,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "series",
+    path: "/series",
     element: (
       <GeneralLayout>
         <SeriesView />
@@ -31,7 +31,7 @@ export const appRouter = createBrowserRouter([
     ),
   },
   {
-    path: "login",
+    path: "/login",
     element: (
       <GeneralLayout>
         <LoginView />
@@ -47,14 +47,14 @@ export const routes = [
   },
   {
     name: "Peliculas",
-    to: "peliculas",
+    to: "/peliculas",
   },
   {
     name: "Series",
-    to: "series",
+    to: "/series",
   },
   {
     name: "Login",
-    to: "login",
+    to: "/login",
   },
 ];
